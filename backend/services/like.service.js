@@ -108,3 +108,30 @@ module.exports.isCommentLiked = async (post_id, comment_id, user_id) => {
         .first();
     return !!like;
 };
+
+module.exports.countPostLikes = async (req, res) => {
+    const count = await db('likes')
+        .where({
+            post_id: req.body.post_id
+        })
+        .andWhere({
+            is_comment: false
+        })
+        .count('* as total')
+        .first();
+    return count;
+}
+
+module.exports.countCommentLikes = async (req, res) => {
+    const count = await db('likes')
+        .where({
+            post_id: req.body.post_id,
+            comment_id: req.body.comment_id
+        })
+        .andWhere({
+            is_comment: true
+        })
+        .count('* as total')
+        .first();
+    return count;
+}

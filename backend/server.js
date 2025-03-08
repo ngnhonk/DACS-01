@@ -3,6 +3,9 @@ const express = require('express');
 const server = express();
 require('dotenv').config();
 
+const cors = require("cors");
+server.use(cors({ origin: "http://localhost:5173", credentials: true }));
+
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
 const categoryRoutes = require('./routes/category.routes');

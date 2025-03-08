@@ -16,6 +16,7 @@ router.use(bodyParser.urlencoded({
 
 router.post('/like/post', authenticate, controllers.toggleLikePost);
 router.post('/like/comment', authenticate, controllers.toggleLikeComment);
-
+router.get("/like/count/post", authenticate, controllers.countPostLikes);
+router.get("/like/count/comment", authenticate, controllers.countCommentLikes);
 
 module.exports = router;

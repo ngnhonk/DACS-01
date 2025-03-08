@@ -1,9 +1,20 @@
 const services = require('../services/like.service');
 
 
-module.exports.countLikes = async (req, res) => {
+module.exports.countPostLikes = async (req, res) => {
     try {
-        let count = await services.countLikes(req);
+        let count = await services.countPostLikes(req);
+        res.json({
+            message: "Total likes",
+            data: count
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+module.exports.countCommentLikes = async (req, res) => {
+    try {
+        let count = await services.countCommentLikes(req);
         res.json({
             message: "Total likes",
             data: count
