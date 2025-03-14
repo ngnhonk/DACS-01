@@ -20,6 +20,4 @@ router.post('/', authenticate, authorize('admin', 'moderator'), categoryControll
 router.put('/:id', authenticate, authorize('admin', 'moderator'), categoryControllers.udpateCategory);
 router.delete('/:id', authenticate, authorize('admin', 'moderator'), categoryControllers.deleteCategory);
 
-
-
 module.exports = router;

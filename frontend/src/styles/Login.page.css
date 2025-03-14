@@ -1,0 +1,93 @@
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/images/login-br.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.login-form .inner-content{
+    align-items: center;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;  
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 2rem 3rem;
+    padding-top: 2rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px); 
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto;
+}
+
+.login-form form h3{
+    color: rgb(130, 224, 224);
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.login-form form input {
+    background-color: rgba(135, 206, 250, 0.2);
+    border-radius: 1.4rem;
+    padding: 0.75rem 2rem; 
+    border: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out; 
+}
+
+.login-form form input::placeholder{
+    color: lightcyan;
+    font-weight: 500;
+}
+
+.login-form form input:focus {
+    background-color: rgba(135, 206, 250, 0.8);
+    outline: none;
+    box-shadow: 0 0 8px rgba(135, 206, 250, 0.6);
+}
+
+
+.login-form form button {
+    background-color: rgba(135, 206, 250, 0.9);
+    border-radius: 1.4rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.login-form form button:hover {
+    background-color: rgba(135, 206, 250, 1);
+    transform: translateY(-2px);
+}
+
+.login-form form button:active {
+    transform: translateY(0);
+}
+
+.login-form .register-link{
+    padding: 0;
+    margin-top: 1rem;
+    color: rgb(49, 48, 48);
+    font-size: 0.8rem;
+}

@@ -1,0 +1,70 @@
+.dashboard {
+  background-color: #5c6b73;
+  padding: 5rem 0;
+  padding-top: 9rem;
+}
+
+.dashboard .container-md {
+  max-width: 60%;
+}
+
+.dashboard .section-one {
+  background-color: #9db4c0;
+  padding: 4rem;
+  border-radius: 1.25rem;
+  /* backdrop-filter: blur(5px); */
+}
+.dashboard .section-one .user-info {
+  margin-bottom: 4rem;
+}
+.dashboard .section-one .user-info .bio {
+  border: none;
+  height: 100%;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  background-color: #c2dfe3;
+  text-align: center;
+}
+.dashboard .section-one .info {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard .section-one .button-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1rem;
+}
+.dashboard .section-one .info button {
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+  min-width: 75%;
+  border: none;
+  background-color: #e0fbfc;
+}
+.dashboard .section-one .info img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.dashboard .section-one ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard .function .button-a {
+  padding: 0.75rem 0;
+  border-radius: 1.5rem;
+  width: 100%;
+  border: none;
+  background-color: #e0fbfc;
+}
+
+.dashboard .section-two {
+    background-color: #9db4c0;
+    padding: 4rem;
+    border-radius: 1.25rem;
+    margin-top: 3rem;
+}

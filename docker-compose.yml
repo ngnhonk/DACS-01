@@ -1,26 +1,39 @@
-version: "3"
+version: '3.8'
+
 services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=development
+
   backend:
     build: ./backend
     ports:
-      - "5000:5000"
-    volumes:
-      - ./backend:/app
+      - "3000:3000"
+    depends_on:
+      - db
     environment:
       - NODE_ENV=development
-    depends_on:
-      - database
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=honk2004
+      - DB_NAME=mydb
 
-  database:
-    image: mysql:latest
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: honk2004
-      MYSQL_DATABASE: mydb
+      - MYSQL_ROOT_PASSWORD=honk2004
+      - MYSQL_DATABASE=mydb
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
 
 volumes:
-  mysql_data:
+  mysql-data:

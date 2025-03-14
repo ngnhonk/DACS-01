@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "../styles/Dashboard.page.css";
+import PostListByUser from "../components/PostListByUser";
 
 function Dashboard() {
   let [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("overview");
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
@@ -31,7 +34,6 @@ function Dashboard() {
 
         let data = await response.json();
         data = data[0];
-        console.log(data);
         setUser(data);
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -48,14 +50,127 @@ function Dashboard() {
     navigate("/login");
   };
 
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
+  // Hàm hiển thị nội dung dựa vào tab hiện tại
+  const renderContent = () => {
+    switch (activeTab) {
+      case "posts":
+        return <PostListByUser />;
+      case "overview":
+        return <div>Overview Content</div>;
+      case "comments":
+        return <div>Comments Content</div>;
+      case "pinned":
+        return <div>Pinned Content</div>;
+      case "locked":
+        return <div>Locked Content</div>;
+      case "settings":
+        return <div>Settings Content</div>;
+      default:
+        return <div>Overview Content</div>;
+    }
+  };
+
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="dashboard">
       {user ? (
         <div>
-          <p>Welcome, {user.username}!</p>
-          <p>Email: {user.email}</p>
-          <button onClick={handleLogout}>Logout</button>
+          <div className="container-md">
+            <div className="section-one">
+              <div className="user-info">
+                <div className="row">
+                  <div className="col-md-7">
+                    <div className="bio">{user.bio}</div>
+                  </div>
+                  <div className="col-md-5">
+                    <div className="info">
+                      <img src={user.avatar_url} alt="User Avatar" />
+                      <div className="button-wrap">
+                        <button onClick={handleLogout}>Log out</button>
+                        <button>Change Avatar</button>
+                        <button>Change Password</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="function">
+                <div className="row">
+                  <div className="col-md-2">
+                    <button
+                      className={`button-a ${
+                        activeTab === "overview" ? "active" : ""
+                      }`}
+                      onClick={() => handleTabClick("overview")}
+                    >
+                      Overview
+                    </button>
+                  </div>
+                  <div className="col-md-2">
+                    <button
+                      className={`button-a ${
+                        activeTab === "posts" ? "active" : ""
+                      }`}
+                      onClick={() => handleTabClick("posts")}
+                    >
+                      Posts
+                    </button>
+                  </div>
+                  <div className="col-md-2">
+                    <button
+                      className={`button-a ${
+                        activeTab === "comments" ? "active" : ""
+                      }`}
+                      onClick={() => handleTabClick("comments")}
+                    >
+                      Comments
+                    </button>
+                  </div>
+                  <div className="col-md-2">
+                    <button
+                      className={`button-a ${
+                        activeTab === "pinned" ? "active" : ""
+                      }`}
+                      onClick={() => handleTabClick("pinned")}
+                    >
+                      Pinned
+                    </button>
+                  </div>
+                  <div className="col-md-2">
+                    <button
+                      className={`button-a ${
+                        activeTab === "locked" ? "active" : ""
+                      }`}
+                      onClick={() => handleTabClick("locked")}
+                    >
+                      Locked
+                    </button>
+                  </div>
+                  <div className="col-md-2">
+                    <button
+                      className={`button-a ${
+                        activeTab === "settings" ? "active" : ""
+                      }`}
+                      onClick={() => handleTabClick("settings")}
+                    >
+                      Settings
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="section-two">
+              <div className="inner-content">
+                {}
+                <div className="tab-content">{renderContent()}</div>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>

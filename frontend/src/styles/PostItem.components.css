@@ -1,0 +1,108 @@
+.post-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.post-item h2 {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.post-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0 0 10px 0;
+}
+
+.post-author {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.like-section {
+  margin-top: 10px;
+}
+
+.comments-section {
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+}
+
+.comments-section h3 {
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.comment {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.comment strong {
+  color: #2c3e50;
+}
+
+.depth-0 {
+  margin-left: 0;
+}
+
+.depth-1 {
+  margin-left: 20px;
+  border-left: 2px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.depth-2 {
+  margin-left: 40px;
+  border-left: 2px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.depth-3 {
+  margin-left: 60px;
+  border-left: 2px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+
+.no-comments {
+  color: #888;
+  font-size: 14px;
+}
+
+.post-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.depth-1,
+.depth-2,
+.depth-3 {
+  border-left: 2px solid #e0e0e0;
+  background-color: #f9f9f9;
+}

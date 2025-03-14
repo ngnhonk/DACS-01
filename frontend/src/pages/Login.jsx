@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth.service";
+import { Link } from "react-router-dom";
+import "../styles/Login.page.css"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -13,7 +15,6 @@ function Login() {
     try {
       const data = await login(email, password);
       localStorage.setItem("token", data.token);
-      alert("Đăng nhập thành công!");
       navigate("/dashboard");
     } catch (error) {
       setError("Email hoặc mật khẩu không đúng!");
@@ -22,13 +23,26 @@ function Login() {
 
   return (
     <div>
-      <h2>Đăng nhập</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder="Mật khẩu" onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">Đăng nhập</button>
-      </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <div className="login-form">
+        <div className="inner-content">
+          <form onSubmit={handleSubmit}>
+          <h3>Hello!</h3>
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Mật khẩu"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit">Đăng nhập</button>
+            <Link to="/register" className="register-link">Đăng Ký</Link>
+          </form>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+        </div>
+      </div>
     </div>
   );
 }
