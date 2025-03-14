@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import LikeButton from "./LikeButton";
 import TotalLikes from "./TotalLikes";
 import { getPostLikes } from "../services/post.service";
-import "../styles/PostItem.components.css";
+import "../styles/components/PostItem.css";
 
 const PostItem = ({ post }) => {
   const [likes, setLikes] = useState(0);

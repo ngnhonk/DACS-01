@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/Dashboard.page.css";
+import "../styles/pages/Dashboard.css";
 import PostListByUser from "../components/PostListByUser";
 
 function Dashboard() {

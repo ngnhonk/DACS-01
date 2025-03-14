@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { register } from "../services/auth.service";
 import { Link } from "react-router-dom";
-import "../styles/Register.page.css";
+import "../styles/pages/Register.css";
 
 function Register() {
   const [email, setEmail] = useState("");

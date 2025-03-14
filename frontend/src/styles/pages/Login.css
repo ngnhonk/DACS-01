@@ -1,17 +1,17 @@
 
-.register-form {
+.login-form{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('../assets/images/login-br.avif');
+    background-image: url('../../assets/images/login-br.avif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 
-.register-form .inner-content{
+.login-form .inner-content{
     align-items: center;
     display: flex;
     padding: 2rem;
@@ -19,12 +19,12 @@
     justify-content: center;  
 }
 
-.register-form form {
+.login-form form {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1); 
-    padding: 3rem;
+    padding: 2rem 3rem;
     padding-top: 2rem;
     border-radius: 1.5rem;
     backdrop-filter: blur(10px); 
@@ -33,13 +33,13 @@
     margin: 0 auto;
 }
 
-.register-form form h3{
+.login-form form h3{
     color: rgb(130, 224, 224);
     padding: 0;
     margin-bottom: 2rem;
 }
 
-.register-form form input {
+.login-form form input {
     background-color: rgba(135, 206, 250, 0.2);
     border-radius: 1.4rem;
     padding: 0.75rem 2rem; 
@@ -52,19 +52,19 @@
     transition: all 0.3s ease-in-out; 
 }
 
-.register-form form input::placeholder{
+.login-form form input::placeholder{
     color: lightcyan;
     font-weight: 500;
 }
 
-.register-form form input:focus {
+.login-form form input:focus {
     background-color: rgba(135, 206, 250, 0.8);
     outline: none;
     box-shadow: 0 0 8px rgba(135, 206, 250, 0.6);
 }
 
 
-.register-form form button {
+.login-form form button {
     background-color: rgba(135, 206, 250, 0.9);
     border-radius: 1.4rem;
     padding: 0.75rem 2rem;
@@ -76,16 +76,16 @@
     margin-top: 1rem;
 }
 
-.register-form form button:hover {
+.login-form form button:hover {
     background-color: rgba(135, 206, 250, 1);
     transform: translateY(-2px);
 }
 
-.register-form form button:active {
+.login-form form button:active {
     transform: translateY(0);
 }
 
-.register-form .login-link{
+.login-form .register-link{
     padding: 0;
     margin-top: 1rem;
     color: rgb(49, 48, 48);

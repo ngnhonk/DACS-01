@@ -1,0 +1,29 @@
+footer{
+  background-color: #253237;
+  color: white;
+}
+
+footer .inner-content{
+    padding: 2rem 0;
+    padding-top: 3rem;
+}
+
+footer .inner-content .list-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+footer .inner-content h6{
+    margin-bottom: 1rem;
+}
+
+footer a{
+    color: inherit;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: lightskyblue;
+    transition: 0.25s;
+}

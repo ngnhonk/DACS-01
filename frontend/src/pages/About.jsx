@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/About.page.css";
+import "../styles/pages/About.css";
 import { Link } from "react-router-dom";
 
 function AboutPage() {
@@ -155,7 +155,7 @@ function AboutPage() {
         </div>
       </div>
 
-      <div className="section-five">
+      <div className="section-five" id="contactUs">
         <div className="container-md">
           <div className="inner-content">
             <h2>Help us improve!</h2>

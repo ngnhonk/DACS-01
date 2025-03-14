@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "../styles/Header.css";
+import "../styles/components/Header.css";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
