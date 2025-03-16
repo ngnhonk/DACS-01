@@ -15,10 +15,10 @@
 }
 .about-page .section-one .inner-content h2 {
   font-weight: 700;
-  color: #ff071b;
+  color: #A9E5FF;
 }
 .about-page .section-one .inner-content p {
-  color: lightskyblue;
+  color: #A9E5FF;
 }
 .about-page .section-one .inner-content button {
   padding: 1rem 3.5rem;
@@ -56,12 +56,12 @@
 
 /* Start Section Two */
 .about-page .section-two {
-  background-color: #253237;
+  background-color: #A9E5FF;
   padding: 6rem 0;
 }
 
 .about-page .section-two .inner-content {
-  background-color: #c2dfe3;
+  background-color: #7ACEF2;
   padding: 3rem 3rem;
   border-radius: 1.5rem;
   padding-bottom: 6rem;
@@ -75,7 +75,6 @@
 }
 .about-page .section-two .category {
   align-items: center;
-  /* background-color: #c2dfe3; */
   background-color: white;
   border-radius: 18px;
 }
@@ -98,8 +97,8 @@
 
 /* Start Section Three */
 .section-three{
-  background-color:#e0fbfc;
   padding: 6rem 0;
+  background-color: white;
 }
 
 .section-three .inner-content {
@@ -128,7 +127,6 @@
   padding: 0;
 }
 .section-three .inner-content p {
-  color: rgb(77, 76, 76);
   font-size: 1.25rem;
   margin: 1rem 0;
   padding: 0;
@@ -152,13 +150,12 @@
 
 /* Start Section Four */
 .section-four{
-  background-color: #253237;
+  background-color: #2AAAE1;
   padding: 5rem;
 }
 
 .section-four .inner-content{
   padding: 5rem;
-  /* background-color: #c2dfe3; */
   background-color: white;
   border-radius: 1.5rem;
 }
@@ -183,16 +180,17 @@
 .section-four .inner-content li button{
   background-color: transparent;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid gray;
   padding: 1rem;
   border-radius: 0.75rem;
   text-align: center;
   margin: 0.5rem 0;
+  transition: 0.5s ease;
 }
 
 .section-four .inner-content li button:hover{
-  background-color: #e0fbfc;
-  transition: 0.75s;
+  background-color: #51C1F1;
+  transition: 0.75s ease;
 }
 
 /* End Section Four */
@@ -208,13 +206,13 @@
   margin: 5rem 0;
   padding: 5rem;
   padding-top: 3.5rem;
-  background-color: #c2dfe3;
+  background-color: #2AAAE1;
   border-radius: 1.5rem;
 }
 .section-five .inner-content h2 {
   text-align: center;
   font-size: 28px;
-  color: #253237;
+  color: white;
   margin-bottom: 3rem;
 }
 
@@ -250,7 +248,7 @@
 }
 
 .section-five button {
-  background-color: #253237;
+  background-color: #A9E5FF;
   color: white;
   font-size: 18px;
   padding: 12px;
@@ -258,8 +256,9 @@
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  color: black;
 }
 
 .section-five button:hover {
-  background-color: #5c6b73;
+  background-color: #0084BC;
 }

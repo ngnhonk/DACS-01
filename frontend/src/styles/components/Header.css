@@ -1,5 +1,5 @@
 header {
-  background-color: #253237;
+  background-color: #7ACEF2;
   color: white;
   position: fixed;
   top: 0;
@@ -8,6 +8,7 @@ header {
   z-index: 1000;
   font-weight: 600;
   transition: 0.5s;
+  color: black;
 }
 header.scrolled {
   background-color: rgba(255, 255, 255, 0.1);
@@ -51,11 +52,50 @@ header .inner-header .mid ul {
 
 header .inner-header .mid ul li {
   padding: 1.5rem 2rem;
+  transition: 0.55s;
 }
 
 header .inner-header .mid ul li:hover {
-  background-color: lightskyblue;
+  background-color: #2AAAE1;
   transition: 0.75s;
 
   color: black;
+}
+
+header .right{
+  display: flex;
+  margin-right: 1rem;
+}
+header .right ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .right ul li{
+  width: 50px;
+  height: 50px;
+  background-color: #f5f5f5;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  transition: 0.55s;
+}
+header .right ul li:hover{
+  background-color: #51C1F1;
+  transition: 0.55s;
+}
+header .left{
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+header .left img{
+  width: 50px;
+  height: 50px;
+  margin-right: 10rem;
 }

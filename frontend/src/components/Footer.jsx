@@ -12,18 +12,18 @@ function Footer() {
           <div className="row">
             <div className="col-md-3">
               <div className="list-item">
-                <h6>Title</h6>
-                <Link to="#">Join Now</Link>
-                <Link to="#">Join Now</Link>
-                <Link to="#">Join Now</Link>
+                <h6>About</h6>
+                <Link to="#">Rules</Link>
+                <Link to="#">Terms</Link>
+                <Link to="#">Dev Team</Link>
               </div>
             </div>
             <div className="col-md-3">
               <div className="list-item">
-                <h6>Title</h6>
-                <Link to="#">Join Now</Link>
-                <Link to="#">Join Now</Link>
-                <Link to="#">Join Now</Link>
+                <h6>Guide</h6>
+                <Link to="#">Handbook</Link>
+                <Link to="#">API</Link>
+                <Link to="#">Other</Link>
               </div>
             </div>
             <div className="col-md-3">
@@ -43,7 +43,7 @@ function Footer() {
               </div>
             </div>
 
-            <h6>© ngnhonk</h6>
+            <h6>© DACS - 01</h6>
           </div>
         </div>
       </div>

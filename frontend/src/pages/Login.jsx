@@ -17,7 +17,7 @@ function Login() {
       localStorage.setItem("token", data.token);
       navigate("/dashboard");
     } catch (error) {
-      setError("Email hoặc mật khẩu không đúng!");
+      setError("Wrong email or password!");
     }
   };
 
@@ -34,11 +34,11 @@ function Login() {
             />
             <input
               type="password"
-              placeholder="Mật khẩu"
+              placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">Đăng nhập</button>
-            <Link to="/register" className="register-link">Đăng Ký</Link>
+            <button type="submit">Login</button>
+            <Link to="/register" className="register-link">Register</Link>
           </form>
           {error && <p style={{ color: "red" }}>{error}</p>}
         </div>

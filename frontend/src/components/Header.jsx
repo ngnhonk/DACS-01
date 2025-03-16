@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../styles/components/Header.css";
+import logo from "../assets/images/logo-dark.png";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,24 +22,37 @@ function Header() {
   return (
     <header className={scrolled ? "scrolled" : ""}>
       <div className="inner-header">
-        <div className="left"></div>
+        <div className="left">
+        <Link to="/about"><img src={logo} alt="" /></Link>
+        </div>
         <div className="mid">
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
             <li>
               <Link to="/posts">Posts</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
             </li>
-            <li>
-              <Link to="/dashboard">Profile</Link>
+          </ul>
+        </div>
+        <div className="right">
+          <ul>
+            <li className="create-post">
+              <Link to="/dashboard#createPost">
+                {" "}
+                <i class="fa-solid fa-plus"></i>
+              </Link>
+            </li>
+            <li className="notification">
+              <i class="fa-solid fa-bell"></i>
+            </li>
+            <li className="user">
+              <Link to="/dashboard">
+                <i class="fa-regular fa-user"></i>
+              </Link>
             </li>
           </ul>
         </div>
-        <div className="right"></div>
       </div>
     </header>
   );

@@ -67,7 +67,7 @@ module.exports.lockPost = async (req) => {
 };
 
 module.exports.getFormattedPost = async (req) => {
-    let {postId} = req.params;
+  let { postId } = req.params;
   const rawData = await db("posts as p")
     .leftJoin("users as u", "p.user_id", "u.id")
     .leftJoin("comments as c", "c.post_id", "p.id")
@@ -134,6 +134,7 @@ module.exports.getAllFormattedPosts = async () => {
       "p.id as post_id",
       "p.title",
       "p.content",
+      "p.category_id as categoryId",
       "u.id as user_id",
       "u.username",
       "c.id as comment_id",
@@ -153,6 +154,7 @@ module.exports.getAllFormattedPosts = async () => {
         id: row.post_id,
         title: row.title,
         content: row.content,
+        categoryId: row.categoryId,
         user: {
           id: row.user_id,
           username: row.username,
@@ -180,7 +182,9 @@ module.exports.getAllFormattedPosts = async () => {
         if (commentMap[row.parent_comment_id]) {
           commentMap[row.parent_comment_id].replies.push(comment);
         } else {
-          console.warn(`Parent comment ${row.parent_comment_id} not found yet for comment ${row.comment_id}`);
+          console.warn(
+            `Parent comment ${row.parent_comment_id} not found yet for comment ${row.comment_id}`
+          );
         }
       }
     }
@@ -194,7 +198,7 @@ module.exports.getPostsByUser = async (req) => {
     .leftJoin("users as u", "p.user_id", "u.id")
     .leftJoin("comments as c", "c.post_id", "p.id")
     .leftJoin("users as cu", "c.user_id", "cu.id")
-    .where('p.user_id', '=', req.user.id)
+    .where("p.user_id", "=", req.user.id)
     .select(
       "p.id as post_id",
       "p.title",
@@ -245,11 +249,87 @@ module.exports.getPostsByUser = async (req) => {
         if (commentMap[row.parent_comment_id]) {
           commentMap[row.parent_comment_id].replies.push(comment);
         } else {
-          console.warn(`Parent comment ${row.parent_comment_id} not found yet for comment ${row.comment_id}`);
+          console.warn(
+            `Parent comment ${row.parent_comment_id} not found yet for comment ${row.comment_id}`
+          );
         }
       }
     }
   });
 
   return Object.values(postMap);
+};
+
+module.exports.getPostsByCategory = async (req) => {
+  let category_id = req.params.categoryId;
+  const rawData = await db("posts as p")
+    .leftJoin("users as u", "p.user_id", "u.id")
+    .leftJoin("comments as c", "c.post_id", "p.id")
+    .leftJoin("users as cu", "c.user_id", "cu.id")
+    .where({ category_id })
+    .select(
+      "p.id as post_id",
+      "p.title",
+      "p.content",
+      "u.id as user_id",
+      "u.username",
+      "c.id as comment_id",
+      "c.content as comment_content",
+      "c.parent_comment_id",
+      "cu.id as comment_user_id",
+      "cu.username as comment_username"
+    )
+    .orderBy("c.parent_comment_id", "asc");
+
+  const postMap = {};
+  const commentMap = {};
+
+  rawData.forEach((row) => {
+    if (!postMap[row.post_id]) {
+      postMap[row.post_id] = {
+        id: row.post_id,
+        title: row.title,
+        content: row.content,
+        user: {
+          id: row.user_id,
+          username: row.username,
+        },
+        comments: [],
+      };
+    }
+
+    if (row.comment_id) {
+      const comment = {
+        id: row.comment_id,
+        content: row.comment_content,
+        user: {
+          id: row.comment_user_id,
+          username: row.comment_username,
+        },
+        replies: [],
+      };
+
+      commentMap[comment.id] = comment;
+
+      if (row.parent_comment_id === null) {
+        postMap[row.post_id].comments.push(comment);
+      } else {
+        if (commentMap[row.parent_comment_id]) {
+          commentMap[row.parent_comment_id].replies.push(comment);
+        } else {
+          console.warn(
+            `Parent comment ${row.parent_comment_id} not found yet for comment ${row.comment_id}`
+          );
+        }
+      }
+    }
+  });
+
+  return Object.values(postMap);
+};
+
+module.exports.updatePostCategory = async (req) => {
+  let { post_id, category_id } = req.body;
+  await db("posts").update({ category_id }).where({ id: post_id });
+  return;
 };

@@ -17,8 +17,21 @@ router.use(bodyParser.urlencoded({
 }));
 
 router.post("/like", authenticate, likeController.toggleLikePost); // { post_id } = req.body;
+
 router.post("/likes", authenticate, likeController.countPostLikes); // {post_id} = req.body
+
 router.get("/comments", authenticate, commentController.getAllComments); // {post_id} = req.body
+
+router.post('/:id/comment', authenticate, commentController.createComment)
+
+router.post('/:postId/comment/:commentId/reply', authenticate, commentController.createReply);
+
+router.get('/category/:categoryId',authenticate, postController.getPostsByCategory);
+
+router.post('/category/update',authenticate, postController.updatePostCategory);
+
+
+
 router.post("/comment/like", authenticate, likeController.toggleLikeComment); // { post_id, comment_id } = req.body
 router.get("/comment/reply", authenticate, commentController.getReply); // req.body.comment_id
 router.put("/comment/update", authenticate, commentController.updateComment); // {post_id, parent_comment_id, content} = req.body
@@ -32,11 +45,12 @@ router.get('/', authenticate, postController.getAllFormattedPosts);
 router.get("/:postId/like-status", authenticate, likeController.checkLikeStatus);
 router.get('/byUser', authenticate, postController.getPostsByUser);
 
+
 router.get('/test', postController.getPostsByUser);
 
 // Only admin and moderator
 
-router.post('/', authenticate, authorize('admin', 'moderator'), postController.createPost);
+router.post('/', authenticate, postController.createPost);
 router.put('/:id', authenticate, authorize('admin', 'moderator'), postController.updatePost);
 router.delete('/:id', authenticate, authorize('admin', 'moderator'), postController.deletePost);
 

@@ -23,7 +23,17 @@ module.exports.getAllComments = async (req, res) => {
 
 module.exports.createComment = async (req, res) => {
   let user_id = req.user.id;
-  let { post_id, parent_comment_id, content } = req.body;
+  let { content } = req.body;
+  let post_id = req.params.id;
+  await db("comments").insert({ post_id, user_id, content });
+  return;
+};
+
+module.exports.createReply = async (req, res) => {
+  let user_id = req.user.id;
+  let { content } = req.body;
+  let post_id = req.params.postId;
+  let parent_comment_id = req.params.commentId;
   await db("comments").insert({ post_id, user_id, parent_comment_id, content });
   return;
 };

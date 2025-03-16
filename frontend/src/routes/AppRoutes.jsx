@@ -24,11 +24,11 @@ function Layout({ children }) {
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Layout><Home /><Footer/></Layout>} />
-      <Route path="/login" element={<Login />} /> {/* Không có Header */}
-      <Route path="/register" element={<Register />} /> {/* Không có Header */}
-      <Route path="/posts" element={<Layout><Posts /><Footer/></Layout>} />
+      <Route path="/" element={<Layout><AboutPage /><Footer/></Layout>} />
       <Route path="/about" element={<Layout><AboutPage /><Footer/></Layout>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/posts" element={<Layout><Posts /><Footer/></Layout>} />
       <Route path="/dashboard" element={<Layout><Dashboard /><Footer/></Layout>} />
     </Routes>
   );

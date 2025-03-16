@@ -9,6 +9,15 @@ module.exports.getAllPosts = async (req, res) => {
   }
 };
 
+module.exports.getPostsByCategory = async (req, res) => {
+  try {
+    let posts = await services.getPostsByCategory(req);
+    res.json(posts);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports.getOnePost = async (req, res) => {
   try {
     let post = await services.getOnePost(req);
@@ -65,7 +74,7 @@ module.exports.lockPost = async (req, res) => {
 
 module.exports.getFormattedPost = async (req, res) => {
   try {
-    let posts = await services.getFormattedPost(req,res);
+    let posts = await services.getFormattedPost(req, res);
     res.json(posts);
   } catch (error) {
     console.log(error);
@@ -74,18 +83,27 @@ module.exports.getFormattedPost = async (req, res) => {
 
 module.exports.getAllFormattedPosts = async (req, res) => {
   try {
-    let posts = await services.getAllFormattedPosts(req,res);
+    let posts = await services.getAllFormattedPosts(req, res);
     res.json(posts);
   } catch (error) {
     console.log(error);
   }
 };
 
-module.exports.getPostsByUser = async(req,res)=>{
+module.exports.getPostsByUser = async (req, res) => {
   try {
-    let posts = await services.getPostsByUser(req,res);
+    let posts = await services.getPostsByUser(req, res);
     res.json(posts);
   } catch (error) {
     console.log(error);
   }
-}
+};
+
+module.exports.updatePostCategory = async (req, res) => {
+  try {
+  await services.updatePostCategory(req, res);
+    res.json({message: "Update caregory for post successfully"});
+  } catch (error) {
+    console.log(error);
+  }
+};

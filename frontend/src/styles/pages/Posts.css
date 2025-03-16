@@ -1,0 +1,109 @@
+.posts {
+  margin-top: 5rem;
+}
+.posts .col-lg-2 {
+  border-right: 2px solid gray;
+}
+.posts .category-list-container {
+  /* padding: 1rem; */
+  margin-left: 1rem;
+}
+.posts .category-list-container h4 {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid gray;
+  padding-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+.posts .category-list-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid gray;
+}
+
+.posts .category-list-container ul li button {
+  width: 98%;
+  border: none;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  transition: 0.25s;
+}
+
+.posts .category-list-container ul li button:hover {
+  background-color: rgb(175, 173, 173);
+  transition: 0.25s ease-in;
+}
+
+.posts .category-list-container .btn {
+  color: black;
+  width: 98%;
+  border-radius: 0.5rem;
+  background-color: #A9E5FF;
+  border: none;
+  transition: 0.35s;
+}
+
+.posts .category-list-container .btn:hover {
+  background-color: #51C1F1;
+  transition: 0.35s ease-in;
+}
+
+.posts .category-list-container h5 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-posts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar {
+  width: 50%;
+  margin-top: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:hover,
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.posts .post-item {
+  padding: 2rem 5rem;
+  border: none;
+}
+
+.posts .post-item .card-body{
+    border-radius: 1rem;
+    border: 1px solid gray;
+    padding: 2rem;
+}
+
+.posts .post-item .card-body .title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 1rem 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.5px solid lightgray;
+
+}
+.posts .post-item .categorySelect{
+    margin-bottom: 1rem;
+}

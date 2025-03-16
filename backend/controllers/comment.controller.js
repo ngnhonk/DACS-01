@@ -28,6 +28,16 @@ module.exports.createComment = async (req, res) => {
     console.log(error);
   }
 };
+module.exports.createReply = async (req, res) => {
+  try {
+    await services.createReply(req, res);
+    res.json({
+      message: "Created one comment",
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports.updateComment = async (req, res) => {
   try {

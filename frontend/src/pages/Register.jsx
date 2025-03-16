@@ -15,10 +15,10 @@ function Register() {
     e.preventDefault();
     try {
       await register(email, username, password);
-      setMessage("Đăng ký thành công! Hãy đăng nhập.");
+      setMessage("Register successfully! Please login.");
       navigate("/login");
     } catch (error) {
-      setMessage("email hoặc username không hợp lệ!");
+      setMessage("Wrong email or username!");
     }
   };
 
@@ -40,11 +40,11 @@ function Register() {
             />
             <input
               type="password"
-              placeholder="Mật khẩu"
+              placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">Đăng ký</button>
-            <Link to="/login" className="login-link">Đăng Nhập</Link>
+            <button type="submit">Register</button>
+            <Link to="/login" className="login-link">Login</Link>
           </form>
           {message && <p>{message}</p>}
         </div>

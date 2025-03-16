@@ -23,15 +23,15 @@ const PostListByUser = () => {
     fetchPosts();
   }, []);
 
-  if (loading) return <p>Đang tải...</p>;
-  if (error) return <p>Lỗi: {error}</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Something went wrong: {error}</p>;
 
   return (
     <div>
       {posts.length > 0 ? (
         posts.map((post) => <PostByUser key={post.id} post={post} />)
       ) : (
-        <p>Chưa có bài viết nào.</p>
+        <p>Empty!</p>
       )}
     </div>
   );

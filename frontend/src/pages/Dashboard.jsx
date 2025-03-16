@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/pages/Dashboard.css";
 import PostListByUser from "../components/PostListByUser";
+import CreatePost from "../components/CreatePost";
+import CategoryList from "../components/CategoryList";
 
 function Dashboard() {
   let [user, setUser] = useState(null);
@@ -54,15 +56,14 @@ function Dashboard() {
     setActiveTab(tab);
   };
 
-  // Hàm hiển thị nội dung dựa vào tab hiện tại
   const renderContent = () => {
     switch (activeTab) {
       case "posts":
         return <PostListByUser />;
       case "overview":
-        return <div>Overview Content</div>;
+        return <CreatePost />;
       case "comments":
-        return <div>Comments Content</div>;
+        return <CategoryList/>;
       case "pinned":
         return <div>Pinned Content</div>;
       case "locked":
@@ -107,7 +108,7 @@ function Dashboard() {
                       }`}
                       onClick={() => handleTabClick("overview")}
                     >
-                      Overview
+                      Create
                     </button>
                   </div>
                   <div className="col-md-2">

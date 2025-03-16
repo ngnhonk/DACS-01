@@ -14,7 +14,7 @@ router.use(bodyParser.urlencoded({
 }));
 
 // API chỉ admin và moderator có thể truy cập
-router.get('/', authenticate, authorize('admin', 'moderator'), categoryControllers.getAllCategories);
+router.get('/', categoryControllers.getAllCategories);
 router.get('/:id', authenticate, authorize('admin', 'moderator'), categoryControllers.getOneCategory);
 router.post('/', authenticate, authorize('admin', 'moderator'), categoryControllers.createCategory);
 router.put('/:id', authenticate, authorize('admin', 'moderator'), categoryControllers.udpateCategory);
