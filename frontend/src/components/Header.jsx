@@ -33,6 +33,9 @@ function Header() {
             <li>
               <Link to="/about">About</Link>
             </li>
+            <li>
+              <Link to="/guide">Guide</Link>
+            </li>
           </ul>
         </div>
         <div className="right">

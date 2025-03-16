@@ -6,14 +6,13 @@ const LikeButton = ({ postId, onLikeToggle }) => {
   const [error, setError] = useState(null);
   const [liked, setLiked] = useState(false);
 
-  // Fetch trạng thái like ban đầu
   useEffect(() => {
     const fetchLikeStatus = async () => {
       try {
         const status = await checkLikeStatus(postId);
         setLiked(status.liked);
       } catch (err) {
-        setError(err.message || "Không thể tải trạng thái thích");
+        setError(err.message || "Can not load this");
       }
     };
     fetchLikeStatus();
@@ -23,13 +22,13 @@ const LikeButton = ({ postId, onLikeToggle }) => {
     setLoading(true);
     setError(null);
     try {
-      await likePost(postId); // Gọi API toggle like/unlike
-      setLiked(!liked); // Đổi trạng thái
+      await likePost(postId);
+      setLiked(!liked);
       if (onLikeToggle) {
-        await onLikeToggle(); // Gọi callback để cập nhật số lượt thích
+        await onLikeToggle();
       }
     } catch (err) {
-      setError(err.message || "Không thể thực hiện hành động");
+      setError(err.message || "Can not do this yet");
     } finally {
       setLoading(false);
     }
@@ -49,7 +48,7 @@ const LikeButton = ({ postId, onLikeToggle }) => {
           cursor: loading ? "not-allowed" : "pointer",
         }}
       >
-        {loading ? "Đang xử lý..." : liked ? "Đã thích" : "Thích"}
+        {loading ? "Pending..." : liked ? "Liked" : "Like"}
       </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>

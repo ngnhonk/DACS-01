@@ -63,7 +63,7 @@ function Dashboard() {
       case "overview":
         return <CreatePost />;
       case "comments":
-        return <CategoryList/>;
+        return <div>This function already updating</div>;
       case "pinned":
         return <div>Pinned Content</div>;
       case "locked":
@@ -118,7 +118,7 @@ function Dashboard() {
                       }`}
                       onClick={() => handleTabClick("posts")}
                     >
-                      Posts
+                      Your Posts
                     </button>
                   </div>
                   <div className="col-md-2">

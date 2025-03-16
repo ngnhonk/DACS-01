@@ -16,6 +16,7 @@ server.use('/api/v1/auth', authRoutes);
 server.use('/api/v1/user', userRoutes);
 server.use('/api/v1/category', categoryRoutes);
 server.use('/api/v1/post', postRoutes);
+server.use('/api/v1', authRoutes);
 server.listen(port, () => {
     console.log(`server is running at ${port}: http://localhost:${port}`);
 })

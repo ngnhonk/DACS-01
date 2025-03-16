@@ -8,10 +8,9 @@ import { Fragment } from "react";
 import Header from "../components/Header";
 import AboutPage from "../pages/About";
 import Footer from "../components/Footer";
+import GuideBook from "../components/GuideBookComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "../styles/App.css";
 
-// Component Layout với Header
 function Layout({ children }) {
   return (
     <Fragment>
@@ -24,12 +23,53 @@ function Layout({ children }) {
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Layout><AboutPage /><Footer/></Layout>} />
-      <Route path="/about" element={<Layout><AboutPage /><Footer/></Layout>} />
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <AboutPage />
+            <Footer />
+          </Layout>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <Layout>
+            <AboutPage />
+            <Footer />
+          </Layout>
+        }
+      />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/posts" element={<Layout><Posts /><Footer/></Layout>} />
-      <Route path="/dashboard" element={<Layout><Dashboard /><Footer/></Layout>} />
+      <Route
+        path="/posts"
+        element={
+          <Layout>
+            <Posts />
+            <Footer />
+          </Layout>
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <Layout>
+            <Dashboard />
+            <Footer />
+          </Layout>
+        }
+      />
+      <Route
+        path="/guide"
+        element={
+          <Layout>
+            <GuideBook />
+            <Footer />
+          </Layout>
+        }
+      />
     </Routes>
   );
 }

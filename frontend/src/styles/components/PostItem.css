@@ -81,10 +81,6 @@
   font-size: 14px;
 }
 
-.post-item:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 .comment {
   padding: 10px;
   margin-bottom: 10px;

@@ -127,7 +127,7 @@ const PostItem = ({ post }) => {
     ));
   };
 
-  const categoryName = categories.find((cat) => cat.id === post.categoryId)?.name || "No category";
+  const categoryName = categories.find((cat) => cat.id === post.categoryId)?.name || "Loading...";
 
   return (
     <div className="card mb-4">

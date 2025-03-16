@@ -10,5 +10,6 @@ router.use(bodyParser.urlencoded({
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);
+router.get('/', authController.hello);
 
 module.exports = router;
