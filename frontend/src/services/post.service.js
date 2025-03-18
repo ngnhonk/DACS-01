@@ -108,7 +108,7 @@ export const createReply = async (postId, commentId, content) => {
     const token = getToken();
     const response = await axios.post(
       `${API_URL}/${postId}/comment/${commentId}/reply`,
-      { content }, // Dữ liệu gửi trong body
+      { content },
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -132,7 +132,7 @@ export const deleteComment = async (commentId) => {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
-        data: { comment_id: commentId }, // Gửi comment_id trong body
+        data: { comment_id: commentId },
       }
     );
     return response.data;

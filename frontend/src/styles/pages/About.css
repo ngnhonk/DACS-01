@@ -12,6 +12,7 @@
   padding-top: 20rem;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
+  text-align: center;
 }
 .about-page .section-one .inner-content h2 {
   font-weight: 700;

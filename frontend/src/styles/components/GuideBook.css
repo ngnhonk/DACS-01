@@ -1,46 +1,49 @@
 .guidebook {
-    margin: 12.5rem 0;
-    margin-top: 15rem;
+  margin: 12.5rem 0;
+  margin-top: 15rem;
 }
 
 .guidebook .title-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-left: 1px solid gray;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-.guidebook .title-list li{
-    margin: 1rem;
-}
-
-.guidebook .title-list li button{
-    border:none;
-    width: 100%;
-    padding: 0.5rem 0;
-    border-radius: 0.5rem;
+.guidebook .title-list li {
+  margin: 1rem;
 }
 
-.guidebook .title-list li button:hover{
-    background-color: rgb(185, 184, 184);
-    transition: 0.5s;
+.guidebook .title-list li button {
+  border: none;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
 }
 
-.guidebook ul{
-    list-style-type: circle;
+.guidebook .title-list li button:hover {
+  background-color: rgb(185, 184, 184);
+  transition: 0.5s;
 }
-.guidebook h3, .guidebook h2{
-    font-size: 1.4rem;
-    color: rgb(248, 90, 90);
+
+.guidebook ul {
+  list-style-type: circle;
 }
-.guidebook .content a{
-    text-decoration: none;
-    background-color: #A9E5FF;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    color: black;
-    transition: 0.5s;
+.guidebook h3,
+.guidebook h2 {
+  font-size: 1.4rem;
+  color: rgb(248, 90, 90);
 }
-.guidebook .content a:hover{
-    background-color: #7ACEF2;
-    transition: 0.5s;
+.guidebook .border-line {
+  border-right: 1px solid gray;
+}
+.guidebook .content a {
+  text-decoration: none;
+  background-color: #a9e5ff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  color: black;
+  transition: 0.5s;
+}
+.guidebook .content a:hover {
+  background-color: #7acef2;
+  transition: 0.5s;
 }

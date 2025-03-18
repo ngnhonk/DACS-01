@@ -31,7 +31,7 @@ export const createCategory = async (name, description) => {
           },
         }
       );
-      return response.data; // Trả về dữ liệu category vừa tạo
+      return response.data;
     } catch (error) {
       throw error.response?.data?.message || "Failed to create category";
     }

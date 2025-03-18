@@ -15,4 +15,49 @@ export const getProfile = async () => {
   return response.data;
 };
 
-export default getProfile;
+export const changeAvatar = async (avatar_url) => {
+  const token = getToken();
+
+  const response = await axios.post(
+    `${API_URL}/avatar`,
+    { avatar_url },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return response.message;
+};
+
+export const changePassword = async (password) => {
+  const token = getToken();
+
+  const response = await axios.put(
+    `${API_URL}/change-password`,
+    { password },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return response.message;
+};
+
+
+export const changeBio = async (bio) => {
+  const token = getToken();
+
+  const response = await axios.put(
+    `${API_URL}/bio`,
+    { bio },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  
+  return response.data;
+};

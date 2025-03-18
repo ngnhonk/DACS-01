@@ -447,7 +447,7 @@ const GuideBook = () => {
     <div className="guidebook">
       <div className="container-md">
         <div className="row">
-          <div className="col-lg-9">
+          <div className="col-lg-9 border-line">
             <div className="content">{selectedContent}</div>
           </div>
           <div className="col-lg-3">

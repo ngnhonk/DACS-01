@@ -97,3 +97,16 @@
 .card, .mb-4{
   border: none !important;
 }
+
+.card-body .btn {
+  background-color: #7ACEF2;
+  color:rgb(46, 46, 46);
+  text-decoration: none;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.card-body .btn:hover{
+  background-color: #51C1F1;
+  color: white;
+}

@@ -17,7 +17,26 @@
 .dashboard .section-one .user-info {
   margin-bottom: 4rem;
 }
+
+.dashboard .section-one .edit-button {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 10%;
+  right: 3%;
+  background-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  transition: 0.25s;
+  border: none;
+}
+.dashboard .section-one .edit-button:hover {
+  transition: 0.25s;
+  background-color: #ebedee;
+}
 .dashboard .section-one .user-info .bio {
+  position: relative;
   border: none;
   height: 100%;
   border-radius: 0.9rem;
@@ -28,12 +47,16 @@
 .dashboard .section-one .info {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .dashboard .section-one .button-wrap {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-left: 1rem;
+  width: 100%;
 }
 .dashboard .section-one .info button {
   padding: 0.5rem 2rem;
