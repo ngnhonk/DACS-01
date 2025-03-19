@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import AboutPage from "../pages/About";
 import Footer from "../components/Footer";
 import GuideBook from "../components/GuideBookComponent";
+import Chat from "../components/Chat";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Layout({ children }) {
@@ -66,6 +67,15 @@ export default function AppRoutes() {
         element={
           <Layout>
             <GuideBook />
+            <Footer />
+          </Layout>
+        }
+      />
+      <Route
+        path="/chat"
+        element={
+          <Layout>
+            < Chat/>
             <Footer />
           </Layout>
         }

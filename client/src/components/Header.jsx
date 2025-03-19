@@ -36,6 +36,9 @@ function Header() {
             <li>
               <Link to="/guide">Guide</Link>
             </li>
+            <li>
+              <Link to="/chat">Chat</Link>
+            </li>
           </ul>
         </div>
         <div className="right">
@@ -43,15 +46,15 @@ function Header() {
             <li className="create-post">
               <Link to="/dashboard#createPost">
                 {" "}
-                <i class="fa-solid fa-plus"></i>
+                <i className="fa-solid fa-plus"></i>
               </Link>
             </li>
             <li className="notification">
-              <i class="fa-solid fa-bell"></i>
+              <i className="fa-solid fa-bell"></i>
             </li>
             <li className="user">
               <Link to="/dashboard">
-                <i class="fa-regular fa-user"></i>
+                <i className="fa-regular fa-user"></i>
               </Link>
             </li>
           </ul>

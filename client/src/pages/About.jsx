@@ -18,8 +18,8 @@ function AboutPage() {
               <button>
                 <Link to="/posts">Join Now</Link>
               </button>
-              <button>Discord</button>
-              <button>Contact</button>
+              <button><Link to="/chat">Chat Now</Link></button>
+              <button><Link to="#contactUs">Contact</Link></button>
             </div>
           </div>
         </div>
