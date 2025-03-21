@@ -1,5 +1,11 @@
+.container-md h4{
+  margin-top: 8rem;
+  font-weight: 700;
+  color: darkcyan;
+  text-align: center;
+}
+
 .chat-container {
-  margin: 8rem 0;
   margin-bottom: 4rem;
   display: flex;
   flex-direction: column;

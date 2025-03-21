@@ -64,3 +64,12 @@ module.exports.changeBio = async (req, res) => {
     console.log(error);
   }
 };
+
+module.exports.getUsername = async (req, res) => {
+  try {
+    let username = await services.getUsername(req);
+    res.json(username);
+  } catch (error) {
+    console.log(error);
+  }
+};

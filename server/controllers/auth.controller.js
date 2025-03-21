@@ -24,7 +24,7 @@ module.exports.hello = async (req, res) => {
   try {
     res.json({
       message:
-        "HELLO! This is method GET http://localhost:3000/api/v1/ to test API. If u see that, Backend is running",
+        "HELLO! This is method GET http://localhost:3000/api/v1/auth to test API. If u see that, Backend is running",
     });
   } catch (error) {
     res.status(400).json({ message: error.message });

@@ -1,25 +1,41 @@
 .post-list {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .loading {
-    text-align: center;
-    font-size: 16px;
-    color: #555;
-    margin-top: 20px;
-  }
-  
-  .error {
-    text-align: center;
-    font-size: 16px;
-    color: #e74c3c;
-    margin-top: 20px;
-  }
-  
-  .no-posts {
-    text-align: center;
-    font-size: 16px;
-    color: #888;
-    margin-top: 20px;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.error {
+  text-align: center;
+  font-size: 16px;
+  color: #e74c3c;
+  margin-top: 20px;
+}
+
+.no-posts {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+  margin-top: 20px;
+}
+
+.else-condition p {
+  align-items: center;
+}
+.else-condition p a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #a9e5ff;
+  transition: 0.3s;
+}
+.else-condition p a:hover {
+  background-color: #51c1f1;
+  transition: 0.3s;
+}

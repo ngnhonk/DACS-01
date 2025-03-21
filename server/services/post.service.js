@@ -30,20 +30,13 @@ module.exports.createPost = async (req) => {
 };
 
 module.exports.updatePost = async (req) => {
-  let user_id = req.user.id;
-  let { category_id, title, content, image_url, views, is_pinned, is_locked } =
-    req.body;
+  let { title, content } = req.body;
   await db("posts")
     .update({
-      category_id,
       title,
       content,
-      image_url,
-      views,
-      is_pinned,
-      is_locked,
     })
-    .where({ id: req.params.id });
+    .where({ id: req.params.postId });
   return;
 };
 

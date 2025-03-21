@@ -61,3 +61,18 @@ export const changeBio = async (bio) => {
   
   return response.data;
 };
+
+export const getUsername = async (bio) => {
+  const token = getToken();
+
+  const response = await axios.put(
+    `${API_URL}/username`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  
+  return response.data;
+};

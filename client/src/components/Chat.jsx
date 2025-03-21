@@ -33,6 +33,7 @@ const Chat = () => {
 
   return (
     <div className="container-md">
+      <h4>Random chat - Be polite</h4>
       <div className="chat-container">
         <div className="messages">
           {messages.map((msg, index) => (

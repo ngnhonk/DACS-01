@@ -8,7 +8,7 @@ function AboutPage() {
       <div className="section-one">
         <div className="container-md">
           <div className="inner-content">
-            <h4>Fakenews</h4>
+            <h4>Tech Community</h4>
             <h2>KNOWLEDGE IS POWER!</h2>
             <p>
               Join our thriving community, share knowledge, and grow together.
@@ -32,32 +32,32 @@ function AboutPage() {
             <div className="row">
               <div className="col-md-2">
                 <div className="category">
-                  <i class="fa-solid fa-laptop"></i>Electronics
+                  <i className="fa-solid fa-laptop"></i>Electronics
                 </div>
               </div>
               <div className="col-md-2">
                 <div className="category">
-                  <i class="fa-solid fa-code"></i>Development
+                  <i className="fa-solid fa-code"></i>Development
                 </div>
               </div>
               <div className="col-md-2">
                 <div className="category">
-                  <i class="fa-regular fa-heart"></i>Life
+                  <i className="fa-regular fa-heart"></i>Life
                 </div>
               </div>
               <div className="col-md-2">
                 <div className="category">
-                  <i class="fa-regular fa-calendar-days"></i>Event
+                  <i className="fa-regular fa-calendar-days"></i>Event
                 </div>
               </div>
               <div className="col-md-2">
                 <div className="category">
-                  <i class="fa-solid fa-book"></i>Knowledge
+                  <i className="fa-solid fa-book"></i>Knowledge
                 </div>
               </div>
               <div className="col-md-2">
                 <div className="category" style={{ color: "blue" }}>
-                  <i class="fa-solid fa-plus"> 60</i>Categories
+                  <i className="fa-solid fa-plus"> 60</i>Categories
                 </div>
               </div>
             </div>
@@ -84,34 +84,34 @@ function AboutPage() {
               that empowers, educates, and uplifts!
             </p>
 
-            <div class="flex-ul">
+            <div className="flex-ul">
               <ul>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i>Building a Strong
+                  <i className="fa-regular fa-circle-check"></i>Building a Strong
                   and Thriving Community
                 </li>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i>A Safe Space for
+                  <i className="fa-regular fa-circle-check"></i>A Safe Space for
                   Sharing Valuable Knowledge
                 </li>
               </ul>
               <ul>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i>Providing Answers,
+                  <i className="fa-regular fa-circle-check"></i>Providing Answers,
                   Guidance, and Life Support
                 </li>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i>Bringing Great Value
+                  <i className="fa-regular fa-circle-check"></i>Bringing Great Value
                   to Our Community Members
                 </li>
               </ul>
               <ul>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i>Creating Meaningful
+                  <i className="fa-regular fa-circle-check"></i>Creating Meaningful
                   Cultural and Life Events for Everyone.
                 </li>
                 <li>
-                  <i class="fa-regular fa-circle-check"></i>Listening to Users'
+                  <i className="fa-regular fa-circle-check"></i>Listening to Users'
                   Feedback and Willing to Make Changes
                 </li>
               </ul>

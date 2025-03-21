@@ -1,7 +1,7 @@
-
 import React from "react";
 import PostItem from "./PostItem";
 import "../styles/components/PostList.css";
+import { Link } from "react-router-dom";
 
 const PostList = ({ posts }) => {
   return (
@@ -9,7 +9,9 @@ const PostList = ({ posts }) => {
       {posts.length > 0 ? (
         posts.map((post) => <PostItem key={post.id} post={post} />)
       ) : (
-        <p className="text-center text-muted mt-3">Empty!</p>
+        <div className="else-condition">
+          <p className="text-center text-muted mt-3">Nothing to display!</p>
+        </div>
       )}
     </div>
   );

@@ -22,7 +22,7 @@ function Footer() {
               <div className="list-item">
                 <h6>Guide</h6>
                 <Link to="/guide">Handbook</Link>
-                <Link to="http://localhost:3000/api/v1/">API</Link>
+                <Link to="http://localhost:3000/api/v1/auth">API</Link>
                 <Link to="/guide">Other</Link>
               </div>
             </div>

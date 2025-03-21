@@ -54,3 +54,8 @@ module.exports.changeBio = async (req, res) => {
   await db("users").update({ bio }).where({ id: req.user.id });
   return;
 };
+
+module.exports.getUsername = async (req,res)=>{
+  let username = await db('users').where({id: req.user.id}).select("username");
+  return username;
+}

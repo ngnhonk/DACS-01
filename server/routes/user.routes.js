@@ -13,6 +13,7 @@ router.use(
 );
 
 router.get("/profile", authenticate, userControllers.getInformation);
+router.put("/username", authenticate, userControllers.getUsername);
 router.put("/update", authenticate, userControllers.changeInformation);
 router.put("/bio", authenticate, userControllers.changeBio);
 router.put(

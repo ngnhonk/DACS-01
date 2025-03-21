@@ -111,13 +111,13 @@ function Dashboard() {
                       {user.bio}
 
                       <button className="edit-button" onClick={toggleBioForm}>
-                        <i class="fa-regular fa-pen-to-square"></i>
+                        <i className="fa-regular fa-pen-to-square"></i>
                       </button>
                     </div>
                   </div>
                   <div className="col-md-5">
                     <div className="info">
-                      <img src={user.avatar_url} alt="User Avatar" />
+                      <img className="avatar" src={user.avatar_url} alt="User Avatar" />
                       <div className="button-wrap">
                         <button onClick={handleLogout}>Log out</button>
                         <button onClick={toggleAvatarForm}>

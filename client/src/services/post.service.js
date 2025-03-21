@@ -192,3 +192,17 @@ export const updatePostCategory = async (postId, categoryId) => {
     throw error.response?.data?.message || "Failed to update post category";
   }
 };
+
+export const updatePost = async (postId, postData) => {
+  try {
+    const token = getToken();
+    const response = await axios.put(`${API_URL}/${postId}`, postData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data?.message || "Failed to update post";
+  }
+};
