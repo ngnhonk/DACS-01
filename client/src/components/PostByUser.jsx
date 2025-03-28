@@ -3,7 +3,7 @@ import {
   getOnePost,
   updatePostCategory,
   updatePost,
-  deletePost, // Thêm import deletePost
+  deletePost,
 } from "../services/post.service";
 import { getCategories } from "../services/category.service";
 import "../styles/components/PostItemByUser.css";
@@ -89,7 +89,7 @@ const PostByUser = ({ post }) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
       try {
         await deletePost(post.id);
-        window.location.reload(); // Làm mới trang sau khi xóa thành công
+        window.location.reload();
       } catch (err) {
         setError(err.message);
       }
@@ -161,7 +161,7 @@ const PostByUser = ({ post }) => {
               <button
                 onClick={handleDeletePost}
                 className="action-buttons"
-                style={{ marginLeft: "10px" }} // Cách nút Edit một chút
+                style={{ marginLeft: "10px" }}
               >
                 <i className="fa-regular fa-trash-can"></i> {/* Icon xóa */}
               </button>

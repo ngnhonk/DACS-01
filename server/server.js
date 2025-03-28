@@ -21,31 +21,27 @@ const io = new Server(ioServer, {
   },
 });
 
-let userCount = 0; // Đếm số người dùng tham gia
-const users = new Map(); // Lưu trữ socket.id và tên người dùng (user1, user2,...)
+let userCount = 0;
+const users = new Map();
 
 io.on("connection", (socket) => {
-  // Khi có người dùng mới kết nối
   userCount++;
-  const username = `user${userCount}`;
+  const username = `user ${userCount}`;
   users.set(socket.id, username);
   console.log(`${username} connected: ${socket.id}`);
 
-  // Gửi số lượng người dùng đang hoạt động tới tất cả client
   io.emit("active_users", users.size);
 
   socket.on("send_message", (message) => {
-    const sender = users.get(socket.id); // Lấy tên người gửi
-    const data = { user: sender, message }; // Tạo object chứa user và message
-    io.emit("receive_message", data); // Gửi tin nhắn tới tất cả client
+    const sender = users.get(socket.id);
+    const data = { user: sender, message };
+    io.emit("receive_message", data);
   });
 
   socket.on("disconnect", () => {
     const username = users.get(socket.id);
     users.delete(socket.id);
     console.log(`${username} disconnected: ${socket.id}`);
-
-    // Gửi số lượng người dùng đang hoạt động sau khi có người rời
     io.emit("active_users", users.size);
   });
 });
