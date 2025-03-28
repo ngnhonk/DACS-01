@@ -1,9 +1,3 @@
-.container-md h4{
-  margin-top: 8rem;
-  font-weight: 700;
-  color: darkcyan;
-  text-align: center;
-}
 
 .chat-container {
   margin-bottom: 4rem;
@@ -56,10 +50,10 @@
 }
 .chat-container input:hover,
 .chat-container input:focus {
-    transition: 0.8s ease-in;
-    outline: none;
-    flex: 0.5;
-  }
+  transition: 0.8s ease-in;
+  outline: none;
+  flex: 0.5;
+}
 
 /* Button */
 .chat-container button {
@@ -69,20 +63,19 @@
   cursor: pointer;
   font-weight: bold;
   color: white;
-  transition: background-color 0.3s ;
+  transition: background-color 0.3s;
 }
 
 .chat-container button:hover {
   background-color: #0084bc;
   color: lightgray;
-  transition: background-color 0.3s ;
+  transition: background-color 0.3s;
 }
 
 .chat-container {
   display: flex;
   flex-direction: column;
 }
-
 
 .chat-container > input,
 .chat-container > button {
@@ -92,4 +85,40 @@
 .chat-container > :last-child {
   display: flex;
   border-top: 1px solid #e0e0e0;
+}
+
+.chat-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.chat-info p {
+  font-size: 40px;
+  color: black;
+}
+
+.active-users {
+  font-weight: 600;
+  font-size: 1.5rem;
+  background-color: rgb(38, 212, 38);
+  color: white;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75rem;
+}
+
+.onl-status{
+  display: flex;
+  justify-content:  space-between;
+  margin-top: 8rem;
+  align-self: center;
+}
+
+.onl-status h4{
+  font-weight: 700;
+  color: darkcyan;
+  font-size: 2rem;
 }

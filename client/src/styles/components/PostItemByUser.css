@@ -40,6 +40,7 @@
   transition: 0.3s;
 }
 
+
 .post-card .action-buttons:hover {
   background-color: #51c1f1 !important;
 }
@@ -108,4 +109,9 @@
     margin-top: 10px;
     align-self: flex-end;
   }
+}
+
+
+.post-card .edit-button{
+  margin-right: 1rem ;
 }

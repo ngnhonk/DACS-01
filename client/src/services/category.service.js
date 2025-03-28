@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/v1/category";
+const API_URL = "http://localhost:3000/api/v1/categories";
 
 const getToken = () => sessionStorage.getItem("token");
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 const getToken = () => sessionStorage.getItem("token");
 
-const API_URL = "http://localhost:3000/api/v1/post";
+const API_URL = "http://localhost:3000/api/v1/posts";
 
 export const getPosts = async () => {
   try {
@@ -204,5 +204,19 @@ export const updatePost = async (postId, postData) => {
     return response.data;
   } catch (error) {
     throw error.response?.data?.message || "Failed to update post";
+  }
+};
+
+export const deletePost = async (postId) => {
+  try {
+    const token = getToken();
+    const response = await axios.delete(`${API_URL}/${postId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data?.message || "Failed to delete post";
   }
 };

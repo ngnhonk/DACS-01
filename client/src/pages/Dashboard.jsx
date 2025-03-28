@@ -6,6 +6,7 @@ import CreatePost from "../components/CreatePost";
 import ChangeAvatar from "../components/ChangeAvatar";
 import ChangePassword from "../components/ChangePassword";
 import ChangeBio from "../components/ChangeBio";
+import CommentsList from "../components/CommentsList";
 
 function Dashboard() {
   let [user, setUser] = useState(null);
@@ -26,7 +27,7 @@ function Dashboard() {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/v1/user/profile",
+          "http://localhost:3000/api/v1/users/profile",
           {
             method: "GET",
             headers: {
@@ -86,13 +87,13 @@ function Dashboard() {
       case "overview":
         return <CreatePost />;
       case "comments":
-        return <div>This function already updating</div>;
+        return <CommentsList />;
       case "pinned":
         return <div>Pinned Content</div>;
       case "locked":
         return <div>Locked Content</div>;
       case "settings":
-        return <div>Settings Content</div>;
+        return <div>Not available!</div>;
       default:
         return <div>Overview Content</div>;
     }
@@ -117,7 +118,11 @@ function Dashboard() {
                   </div>
                   <div className="col-md-5">
                     <div className="info">
-                      <img className="avatar" src={user.avatar_url} alt="User Avatar" />
+                      <img
+                        className="avatar"
+                        src={user.avatar_url}
+                        alt="User Avatar"
+                      />
                       <div className="button-wrap">
                         <button onClick={handleLogout}>Log out</button>
                         <button onClick={toggleAvatarForm}>
@@ -134,7 +139,7 @@ function Dashboard() {
 
               <div className="function">
                 <div className="row">
-                  <div className="col-md-2">
+                  <div className="col-md-3">
                     <button
                       className={`button-a ${
                         activeTab === "overview" ? "active" : ""
@@ -144,7 +149,7 @@ function Dashboard() {
                       Create
                     </button>
                   </div>
-                  <div className="col-md-2">
+                  <div className="col-md-3">
                     <button
                       className={`button-a ${
                         activeTab === "posts" ? "active" : ""
@@ -154,7 +159,7 @@ function Dashboard() {
                       Your Posts
                     </button>
                   </div>
-                  <div className="col-md-2">
+                  <div className="col-md-3">
                     <button
                       className={`button-a ${
                         activeTab === "comments" ? "active" : ""
@@ -164,27 +169,8 @@ function Dashboard() {
                       Comments
                     </button>
                   </div>
-                  <div className="col-md-2">
-                    <button
-                      className={`button-a ${
-                        activeTab === "pinned" ? "active" : ""
-                      }`}
-                      onClick={() => handleTabClick("pinned")}
-                    >
-                      Pinned
-                    </button>
-                  </div>
-                  <div className="col-md-2">
-                    <button
-                      className={`button-a ${
-                        activeTab === "locked" ? "active" : ""
-                      }`}
-                      onClick={() => handleTabClick("locked")}
-                    >
-                      Locked
-                    </button>
-                  </div>
-                  <div className="col-md-2">
+
+                  <div className="col-md-3">
                     <button
                       className={`button-a ${
                         activeTab === "settings" ? "active" : ""

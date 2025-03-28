@@ -36,7 +36,7 @@ router.get("/comment/reply", authenticate, commentController.getReply); // req.b
 
 router.put("/comment/update", authenticate, commentController.updateComment); // {post_id, parent_comment_id, content} = req.body
 
-router.delete("/comment/delete", authenticate, commentController.deleteComment); // {post_id} = req.body
+router.get('/comments/:user_id', authenticate, commentController.getCommentsByUser);
 
 router.put("/pin", authenticate, postController.pinPost); // { post_id } = req.body
 
@@ -53,6 +53,7 @@ router.get('/', authenticate, postController.getAllFormattedPosts);
 router.get("/:postId/like-status", authenticate, likeController.checkLikeStatus);
 
 router.get('/byUser', authenticate, postController.getPostsByUser);
+
 
 
 router.get('/test', postController.getPostsByUser);

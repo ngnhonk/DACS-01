@@ -60,3 +60,12 @@ module.exports.deleteComment = async (req, res) => {
     console.log(error);
   }
 };
+
+module.exports.getCommentsByUser = async (req, res) => {
+  try {
+    let comments = await services.getCommentsByUser(req);
+    res.json(comments);
+  } catch (error) {
+    console.log(error);
+  }
+};

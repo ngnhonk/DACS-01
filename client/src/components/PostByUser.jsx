@@ -3,6 +3,7 @@ import {
   getOnePost,
   updatePostCategory,
   updatePost,
+  deletePost, // Thêm import deletePost
 } from "../services/post.service";
 import { getCategories } from "../services/category.service";
 import "../styles/components/PostItemByUser.css";
@@ -14,7 +15,6 @@ const PostByUser = ({ post }) => {
   const [selectedCategoryId, setSelectedCategoryId] = useState(
     post.categoryId || ""
   );
-  // Add new state for editing
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({
     title: post.title,
@@ -65,7 +65,6 @@ const PostByUser = ({ post }) => {
     }
   };
 
-  // Add new function to handle edit form input changes
   const handleEditChange = (e) => {
     const { name, value } = e.target;
     setEditData({
@@ -74,7 +73,6 @@ const PostByUser = ({ post }) => {
     });
   };
 
-  // Add new function to handle edit form submission
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -83,6 +81,18 @@ const PostByUser = ({ post }) => {
       window.location.reload();
     } catch (err) {
       setError(err.message);
+    }
+  };
+
+  // Thêm hàm xử lý xóa bài đăng
+  const handleDeletePost = async () => {
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      try {
+        await deletePost(post.id);
+        window.location.reload(); // Làm mới trang sau khi xóa thành công
+      } catch (err) {
+        setError(err.message);
+      }
     }
   };
 
@@ -131,10 +141,7 @@ const PostByUser = ({ post }) => {
             <button type="submit" className="btn btn-primary">
               Save
             </button>
-            <button
-              type="button"
-              onClick={() => setIsEditing(false)}
-            >
+            <button type="button" onClick={() => setIsEditing(false)}>
               Cancel
             </button>
           </div>
@@ -148,7 +155,15 @@ const PostByUser = ({ post }) => {
                 onClick={() => setIsEditing(true)}
                 className="action-buttons"
               >
-                <i class="fa-regular fa-pen-to-square"></i>
+                <i className="fa-regular fa-pen-to-square"></i>
+              </button>
+              {/* Thêm nút Delete */}
+              <button
+                onClick={handleDeletePost}
+                className="action-buttons"
+                style={{ marginLeft: "10px" }} // Cách nút Edit một chút
+              >
+                <i className="fa-regular fa-trash-can"></i> {/* Icon xóa */}
               </button>
             </div>
           </div>

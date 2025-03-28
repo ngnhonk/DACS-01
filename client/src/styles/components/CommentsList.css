@@ -1,0 +1,41 @@
+.comment-item{
+    background-color: #A9E5FF;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+.main-title{
+    margin: 1.5rem 0;
+    margin-top: 0.5rem;
+}
+textarea{
+    width: 100%;
+}
+.button-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end !important;
+}
+
+.button-section button{
+    border: none;
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    background-color: #e0fbfc;
+    color: white;
+    font-weight: 500;
+}
+
+.button-section button:hover{
+    background-color: #8fcde7;
+}
+
+.color-red{
+    background-color: lightcoral !important;
+}
+
+.color-red:hover{
+    background-color: rgb(245, 89, 89) !important;
+}

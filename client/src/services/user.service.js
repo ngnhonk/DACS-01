@@ -1,7 +1,7 @@
 import axios from "axios";
 const getToken = () => sessionStorage.getItem("token");
 
-const API_URL = "http://localhost:3000/api/v1/user";
+const API_URL = "http://localhost:3000/api/v1/users";
 
 export const getProfile = async () => {
   const token = getToken();

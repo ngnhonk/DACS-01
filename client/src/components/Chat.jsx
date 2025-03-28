@@ -7,14 +7,23 @@ const socket = io.connect("http://localhost:3000");
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [activeUsers, setActiveUsers] = useState(0); // State để lưu số người dùng hoạt động
 
   useEffect(() => {
+    // Lắng nghe tin nhắn
     socket.on("receive_message", (data) => {
       setMessages((prevMessages) => [...prevMessages, data]);
     });
 
+    // Lắng nghe số lượng người dùng hoạt động
+    socket.on("active_users", (count) => {
+      setActiveUsers(count);
+    });
+
+    // Dọn dẹp khi component unmount
     return () => {
       socket.off("receive_message");
+      socket.off("active_users");
     };
   }, []);
 
@@ -33,11 +42,16 @@ const Chat = () => {
 
   return (
     <div className="container-md">
-      <h4>Random chat - Be polite</h4>
+      <div className="onl-status">
+        <h4>Random chat - Be polite</h4>
+        <p className="active-users">{activeUsers}</p>
+      </div>
       <div className="chat-container">
         <div className="messages">
           {messages.map((msg, index) => (
-            <p key={index}>{msg}</p>
+            <p key={index}>
+              <strong>{msg.user}:</strong> {msg.message}
+            </p>
           ))}
         </div>
         <input
